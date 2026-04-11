@@ -28,7 +28,7 @@ public class Diamond {
 
     for (int row = basediamond - 1; row >= 1; row--) {
       int countDiamonds = 2 * row;
-      printDiamondROw(countDiamonds, dimaondWidth);
+      printDiamondRow(countDiamonds, diamondWidth);
     }
 
     printFirstLastRow(diamondWidth);
@@ -48,5 +48,27 @@ public class Diamond {
         printDiamondRow(countDiamonds, diamondWidth);
       }
     }
+}
+
+  public static void printDiamondRow(int countDiamonds, int diamondWidth) {
+    int rowWidth = 2 * countDiamonds - 1;
+    int diamondSpace = (diamondWidth - rowWidth) / 2;
+
+    for (int i = 0; i < diamondSpace; i++) System.out.print(" ");
+
+    for (int i = 0; i < countDiamonds; i++) {
+      System.out.print("*");
+      if (i < countDiamonds - 1) System.out.print(" ");
+    }
+
+    System.out.println();
+  }
+
+  public static void printFirstLastRow(int diamondWidth) {
+    int dimaondSpaces = (diamondWidth - 1) /2;
+
+    for (int i =0; i < dimaondSpaces; i++) System.out.print(" ");
+
+    System.out.println("*");
   }
 }
